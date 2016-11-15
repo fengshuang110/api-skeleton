@@ -1,0 +1,19 @@
+#!/usr/bin/env php
+<?php
+error_reporting(E_ALL);
+date_default_timezone_set('Asia/Shanghai');
+ini_set('date.timezone','Asia/Shanghai');
+include_once(__DIR__.'/console_init.php');
+
+include __DIR__ . '/Library/Loader/AutoloaderFactory.php';
+Library\Loader\AutoloaderFactory::factory(array(
+			'Library\Loader\StandardAutoloader' => array(
+			'autoregister_zf' => true,
+			"namespaces"=>array(
+				"Application"=>__DIR__.'/Application',
+				"Command"=>__DIR__.'/Command',
+			)
+		)	
+));
+
+ConsoleApplication::init(require 'Config/console.php')->run();

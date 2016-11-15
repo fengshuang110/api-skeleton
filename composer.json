@@ -1,0 +1,10 @@
+{
+    "require-all": true,
+    "require": {
+		"luracast/restler": "3.*",
+		"illuminate/database": "4.2.*",
+		"illuminate/view": "4.2.*",
+        "vlucas/phpdotenv": "^2.4",
+        "monolog/monolog": "^1.21"
+    }
+}
