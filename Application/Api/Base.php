@@ -16,9 +16,9 @@ class Base{
 	);
 	
 	protected function success($data=array()){
-		var_dump(\Application::$dbConnection['default']->getQueryLog());
-		var_dump(\Application::$dbConnection['database2']->getQueryLog());
-		die;
+		foreach (\Application::$dbConnection as $connetion){
+			var_dump($connetion->getQueryLog());
+		}
 		$code = 0;
 		return array("code"=>$code,'msg'=>self::$errCode[$code],'data'=>$data);
 	}
